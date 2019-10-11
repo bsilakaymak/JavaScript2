@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>About Me</title>
+    <style>
+    .list-item{
+        color:red;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>About Me</h1>
+
+    <ul>
+      <li>Nickname: <span id="nickname"></span></li>
+      <li>Favorite food: <span id="fav-food"></span></li>
+      <li>Hometown: <span id="hometown"></span></li>
+    </ul>
+    <script>
+       const nickNameEl = document.getElementById("nickname");
+       const favFoodEl = document.getElementById("fav-food");
+       const hometownEl = document.getElementById("hometown");
+       const ulEl = document.getElementsByTagName("ul");
+       const liEl = ulEl[0].getElementsByTagName("li");
+       console.log(liEl);        //add your picture
+
+       document.body.style.fontFamily = "Arial, sans-serif";
+       nickNameEl.innerText = "Siloshka";
+       favFoodEl.innerText = "Lentil Soup";
+       hometownEl.innerText = "Diyarbakir";
+       
+       for( let i =0; i < liEl.length; i++){  
+            liEl[i].classList.add("list-item");
+        }
+      let img = new Image();
+      img.src = "https://avatars2.githubusercontent.com/u/54150648?s=460&v=4"
+      document.body.appendChild(img);  
+    </script>
+  </body>
+</html>
