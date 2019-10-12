@@ -1,5 +1,4 @@
 "use strict";
-// complete
 
 function hijackGoogleLogo(id, source){
    const elementToBeChanged = document.getElementById(id);

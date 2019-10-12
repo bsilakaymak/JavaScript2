@@ -1,4 +1,3 @@
-//add actual quotes
 
 
 const quotes = [

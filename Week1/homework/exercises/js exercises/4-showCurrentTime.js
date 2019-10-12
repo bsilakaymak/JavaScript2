@@ -1,6 +1,5 @@
 "use strict";
 
-//complete
 const newDiv = document.createElement("div");
 document.body.appendChild(newDiv);
 newDiv.setAttribute("id", "time");
