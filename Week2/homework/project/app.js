@@ -21,12 +21,6 @@ function showMins(){
     screenMinutesEl.innerHTML = format(Math.floor(session / 60)) + ":"+ format(seconds);
 }
 showMins();
-function format(x){
-    if(x < 10){
-       return x = "0" + x;
-    }else 
-       return x
-}
 function increaseMinutes(){
     if(countingDown !== true){
         session += 60;
