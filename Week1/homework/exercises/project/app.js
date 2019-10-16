@@ -89,7 +89,7 @@ const quoteBodyEl = document.getElementById("quote-body");
 function randomColor(){
     return 'rgb(' +Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')'
 }
-const animateFunc = function(e){
+const animateQuote = function(e){
     e.preventDefault;
     quoteBodyEl.classList.remove("animation");    
     void quoteBodyEl.offsetWidth;
@@ -104,5 +104,5 @@ function randomQuote(){
     document.body.style.backgroundColor = randomColor();
     document.body.style.color =randomColor();
 }
-buttonEl.addEventListener("click", animateFunc, false);
+buttonEl.addEventListener("click", animateQuote, false);
 buttonEl.addEventListener("click", randomQuote);
