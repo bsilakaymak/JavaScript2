@@ -14,11 +14,11 @@
      let x = 0;
      let timer;
      let walkLeft = true;
-     const windowSize = window.innerWidth - catImg.width;
+     const pathRange = window.innerWidth - (catImg.width/2);
      function catWalk(){
        x += 10;
        catImg.style.left = x + "px";
-        if (walkLeft === true && x > windowSize / 2) {
+        if (walkLeft === true && x > pathRange / 2) {
           clearInterval(timer);
           catImg.setAttribute("src", "tenor.gif");
           function dancingCat(){
@@ -26,7 +26,7 @@
             timer = setInterval(catWalk, 50);}
           setTimeout(dancingCat, 5000); 
           walkLeft = false;}
-        if (x >= windowSize){
+        if (x >= window.innerWidth - catImg.width){
           x = 0;
           walkLeft = true;} }
          timer = setInterval(catWalk, 50);
