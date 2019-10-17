@@ -19,9 +19,7 @@ const mondayTasks = [
   ];
 
   function duration(myArray){
-    let newArray = [];
-    newArray.push(myArray.duration);
-    return newArray;
+      return myArray.duration;
   }
   function perHourRate(item){
     return item * 25 / 60 ;
