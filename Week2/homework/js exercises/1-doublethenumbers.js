@@ -2,7 +2,7 @@
 function doubleEvenNumbers(myArray){
     function isItEven(item){
         if (item % 2 === 0)
-        return item
+        return true;
     }
     function doubleIt(item){
         return item * 2

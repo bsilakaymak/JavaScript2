@@ -3,7 +3,7 @@ const fruitBasket = ['Apple', 'Lemon', 'Grapefruit', 'Lemon', 'Banana', 'Waterme
 
 function getRidOfLemons(item){
   if(item !== "Lemon")
-  return item;
+  return true;
 }
 
 const newBasket = fruitBasket.filter(getRidOfLemons);  
