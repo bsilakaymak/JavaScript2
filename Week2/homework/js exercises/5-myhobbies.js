@@ -10,13 +10,11 @@ const myHobbies = [
 
   const newUl = document.createElement("ul");
   document.body.appendChild(newUl);
-  const ulEl = document.querySelector("ul");
-//   ulEl.classList.add("hobbies-list");
   
   function addListItem(hobby){
      const listItem = document.createElement("li");
      listItem.innerHTML = hobby;
-     ulEl.appendChild(listItem);
+     newUl.appendChild(listItem);
   }
 
  myHobbies.map(addListItem)

@@ -6,7 +6,7 @@ const screenMinutesEl = document.querySelector(".screen-minutes");
 const playEl = document.querySelector("#play");
 const pauseEl = document.querySelector("#pause");
 
-let session = 1500;
+let sessionSeconds = 1500;
 let defaultMin = 1500;
 let countingDown = false;
 let timer;
@@ -18,33 +18,33 @@ function format(x){
 }
 function showMins(){
     minutesEl.innerHTML = Math.floor(defaultMin / 60);
-    let seconds = session % 60 ;
-    screenMinutesEl.innerHTML = format(Math.floor(session / 60)) + ":"+ format(seconds);
+    let seconds = sessionSeconds % 60 ;
+    screenMinutesEl.innerHTML = format(Math.floor(sessionSeconds / 60)) + ":"+ format(seconds);
 }
 showMins();
 function increaseMinutes(){
     if(countingDown !== true){
         defaultMin += 60;
-        session = defaultMin;
+        sessionSeconds = defaultMin;
         showMins()
     }else{
-        return session;
+        return sessionSeconds;
     }
     if(defaultMin >= 3540){
         defaultMin = 3540;
-        session = 3600;
+        sessionSeconds = 3600;
     }
     
 }
 function decreaseMinutes(){
     if(countingDown !== true){
     defaultMin -= 60;
-    session = defaultMin
+    sessionSeconds = defaultMin
     }else{
-        return session;
+        return sessionSeconds;
     }
-    if(session <= 0){
-        session = 0;
+    if(sessionSeconds <= 0){
+        sessionSeconds = 0;
         defaultMin = 0;
         countingDown = false;
     }
@@ -52,10 +52,10 @@ function decreaseMinutes(){
 }
 function startCountDown(){
     timer = setInterval(() => {
-            session--
+            sessionSeconds--
             showMins();
             // minutesEl.innerHTML = 0;
-            if(session <= 0){
+            if(sessionSeconds <= 0){
                screenMinutesEl.innerHTML = "Time's up!"
                clearInterval(timer);
                countingDown = false;
