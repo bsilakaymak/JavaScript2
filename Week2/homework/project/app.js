@@ -7,7 +7,7 @@ const playEl = document.querySelector("#play");
 const pauseEl = document.querySelector("#pause");
 
 let sessionSeconds = 1500;
-let defaultMin = 1500;
+let defaultSeconds = 1500;
 let countingDown = false;
 let timer;
 function format(x){
@@ -17,35 +17,35 @@ function format(x){
        return x
 }
 function showMins(){
-    minutesEl.innerHTML = Math.floor(defaultMin / 60);
+    minutesEl.innerHTML = Math.floor(defaultSeconds / 60);
     let seconds = sessionSeconds % 60 ;
     screenMinutesEl.innerHTML = format(Math.floor(sessionSeconds / 60)) + ":"+ format(seconds);
 }
 showMins();
 function increaseMinutes(){
     if(countingDown !== true){
-        defaultMin += 60;
-        sessionSeconds = defaultMin;
+        defaultSeconds += 60;
+        sessionSeconds = defaultSeconds;
         showMins()
     }else{
         return sessionSeconds;
     }
-    if(defaultMin >= 3540){
-        defaultMin = 3540;
+    if(defaultSeconds >= 3540){
+        defaultSeconds = 3540;
         sessionSeconds = 3600;
     }
     
 }
 function decreaseMinutes(){
     if(countingDown !== true){
-    defaultMin -= 60;
-    sessionSeconds = defaultMin
+    defaultSeconds -= 60;
+    sessionSeconds = defaultSeconds
     }else{
         return sessionSeconds;
     }
     if(sessionSeconds <= 0){
         sessionSeconds = 0;
-        defaultMin = 0;
+        defaultSeconds = 0;
         countingDown = false;
     }
     showMins();
@@ -67,7 +67,7 @@ function countDown(){
         startCountDown();
         countingDown = true;
     }
-    defaultMin = 1500;
+    defaultSeconds = 1500;
 }
 
 function stopCountDown(){
