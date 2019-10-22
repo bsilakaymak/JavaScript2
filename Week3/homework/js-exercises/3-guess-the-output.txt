@@ -1,0 +1,14 @@
+
+// Snippet
+let a = 10;
+const x = (function() {
+  a = 12;
+  return function() {
+    alert(a);
+  };
+})();
+
+x();
+
+It will alert 12, x is set to an immediately invoked function expression which will return another function
+that alerts 12. So when x is invoked, we get 12 alerted.

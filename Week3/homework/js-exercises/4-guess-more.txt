@@ -1,0 +1,24 @@
+const x = 9;
+function f1(val) {
+  val = val + 1;
+  return val;
+}
+f1(x);
+console.log(x);
+
+const y = { x: 9 };
+function f2(val) {
+  val.x = val.x + 1;
+  return val;
+}
+f2(y);
+console.log(y);
+
+
+In the first one, value of x is a number, which is a primitive data type, it's value is copied and
+handled by the function, so actual value of x is the same after execution of f1. Because it is passed
+by value.
+
+In the second one, function accesses the object key x of val object and changes the value of x.Here
+x is like a some kind of pointer that value is stored in. After f2 is executed the value stored in 
+object key x is also changes because here it is passed by reference.
