@@ -49,7 +49,7 @@ function checkValForBoth (callback, input1, input2, message){
 function showResult(tip, bill, ratio, el){
     let valid = checkValForBoth(checkValidity, billAmount.value, numOfPeople.value, "Invalid characters or empty input field!");
     if(valid !== false){
-        tip = bill * ratio;
+        tip = (bill * ratio) / numOfPeople.value;
         el.innerHTML = "$" + parseFloat(tip).toFixed(2);
         checkPeople();
     }else{
