@@ -46,14 +46,14 @@ function checkValForBoth (callback, input1, input2, message){
 
 
 // I added this to avoid two much repetition inside conditionals
-function showResult(tip, bill, ratio, el){
+function showResult(ratio){
     let valid = checkValForBoth(checkValidity, billAmount.value, numOfPeople.value, "Invalid characters or empty input field!");
     if(valid !== false){
-        tip = (bill * ratio) / numOfPeople.value;
-        el.innerHTML = "$" + parseFloat(tip).toFixed(2);
+        result = (billAmount.value * ratio) / numOfPeople.value;
+        resultEl.innerHTML = "$" + parseFloat(result).toFixed(2);
         checkPeople();
     }else{
-        el.innerHTML = " "
+        resultEl.innerHTML = " "
     }
    
 }
@@ -63,13 +63,13 @@ function showResult(tip, bill, ratio, el){
 
 function calculateTips(){
     if(qualityofService.value === "outstanding"){
-        showResult(result, billAmount.value, 0.3, resultEl);
+        showResult(0.3);
     }else if(qualityofService.value === "good"){
-        showResult(result, billAmount.value, 0.2, resultEl);
+        showResult(0.2);
     }else if(qualityofService.value === "bad"){
-        showResult(result, billAmount.value, 0.1, resultEl);
+        showResult(0.1);
     }else if(qualityofService.value === "terrible"){
-        showResult(result, billAmount.value, 0.05, resultEl);
+        showResult(0.05);
     }
 
 }
