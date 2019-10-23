@@ -40,17 +40,22 @@ function checkValidity(input){
 function checkValForBoth (callback, input1, input2, message){
     if (callback(input1) === false || callback(input2) === false){
         alert(message);
+        return false;
     }
 }
 
 
 // I added this to avoid two much repetition inside conditionals
-
 function showResult(tip, bill, ratio, el){
-    checkValForBoth(checkValidity, billAmount.value, numOfPeople.value, "Invalid characters or empty input field!");
-    tip = bill * ratio;
-    el.innerHTML = "$" + parseFloat(tip).toFixed(2);
-    checkPeople();
+    let valid = checkValForBoth(checkValidity, billAmount.value, numOfPeople.value, "Invalid characters or empty input field!");
+    if(valid !== false){
+        tip = bill * ratio;
+        el.innerHTML = "$" + parseFloat(tip).toFixed(2);
+        checkPeople();
+    }else{
+        el.innerHTML = " "
+    }
+   
 }
 
 
